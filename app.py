@@ -54,6 +54,10 @@ def index_post():
     if len(postcode) < 6 or len(postcode) > 8:
         flash('Postcode must be between 6-8 characters long', 'error')
 
+    # check phone starts with 0
+    if len(phone) != 0 and phone[0] != '0':
+        flash('Phone number must start with a \'0\'', 'error')
+    
     return render_template('index.html')
 
 if __name__ == '__main__':

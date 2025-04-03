@@ -20,14 +20,29 @@
     {% endwith %}
     <form action="/" method="post">
         <h2>Personal</h2>
-        <input type="text" name="fname" placeholder="fname"><br>
-        <input type="text" name="sname" placeholder="sname"><br>
-        <input type="email" name="email" placeholder="email"><br>
-        <input type="text" name="phone" placeholder="phone"><br>
-        <input type="text" name="addrline" placeholder="addrline"><br>
-        <input type="text" name="towncity" placeholder="towncity"><br>
-        <input type="text" name="county" placeholder="county"><br>
-        <input type="text" name="postcode" placeholder="postcode" pattern="/[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z]{2}/i"><br>
+        <input type="text" name="fname" placeholder="fname"
+        title="3-30 characters long"><br>
+        
+        <input type="text" name="sname" placeholder="sname"
+        title="3-50 characters long"><br>
+        
+        <input type="email" name="email" placeholder="email"
+        title="Less than 60 characters long"><br>
+        
+        <input type="text" name="phone" placeholder="phone"
+        title="11 characters long"><br>
+        
+        <input type="text" name="addrline" placeholder="addrline"
+        title="Less than 255 characters long"><br>
+        
+        <input type="text" name="towncity" placeholder="towncity"
+        title="Less than 255 characters long"><br>
+        
+        <input type="text" name="county" placeholder="county"
+        title="Less than 50 characters long"><br>
+        
+        <input type="text" name="postcode" placeholder="postcode" pattern="/[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z]{2}/i"
+        title="6-8 characters long"><br>
 
         <button type="submit">Submit</button>
     </form>
