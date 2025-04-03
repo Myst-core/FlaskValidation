@@ -1,7 +1,11 @@
 .flashes {
     list-style-type: none;
+    padding: 2px;
+    margin: 0;
+    border: 3px solid red;
+    width: fit-content;
 }
 
-.error {
-    border: 3px solid red;
+.flashes li {
+    color: black;
 }
