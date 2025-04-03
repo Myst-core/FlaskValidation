@@ -24,19 +24,35 @@ def index_post():
     
     # check fname is between 3-30 char
     if len(fname) < 3 or len(fname) > 30:
-        flash('Firstname must be 3-30 characters long', 'error')
+        flash('Firstname must be between 3-30 characters long', 'error')
 
     # check sname is between 3-50 char
     if len(sname) < 3 or len(sname) > 50:
-        flash('Surname must be 3-50 characters long', 'error')
+        flash('Surname must be between 3-50 characters long', 'error')
     
     # check email is less than 60 char
     if len(email) > 60:
         flash('Email must be less than 60 characters long', 'error')
     
+    # check phone is equal to 11 char
     if len(phone) != 11:
-        flash()
+        flash('Phone number must be 11 characters long', 'error')
 
+    # check addrline is less than 255 char
+    if len(addrline) > 255:
+        flash('Address line must be less than 255 characters long', 'error')
+
+    # check towncity is less than 255 char
+    if len(towncity) > 255:
+        flash('Town/City must be less than 255 characters', 'error')
+
+    # check county is less than 50 char
+    if len(county) > 50:
+        flash('County must be less than 50 characters', 'error')
+
+    # check postcode is 6-8 char
+    if len(postcode) < 6 or len(postcode) > 8:
+        flash('Postcode must be between 6-8 characters long', 'error')
 
     return render_template('index.html')
 
