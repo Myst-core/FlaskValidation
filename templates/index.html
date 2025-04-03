@@ -8,10 +8,28 @@
 <body>
     <h1>Form Validation</h1>
 
-    <h2>Personal</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <form action="/index" method="post">
+        <h2>Personal</h2>
+        <input type="text" name="fname" placeholder="fname"><br>
+        <input type="text" name="sname" placeholder="sname"><br>
+        <input type="email" name="email" placeholder="email"><br>
+        <input type="text" name="phone" placeholder="phone"><br>
+        <input type="text" name="addrline" placeholder="addrline"><br>
+        <input type="text" name="towncity" placeholder="towncity"><br>
+        <input type="text" name="county" placeholder="county"><br>
+        <input type="text" name="postcode" placeholder="postcode" pattern="/[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z]{2}/i"><br>
 
-    <h2>Card details</h2>
+        <button type="submit">Submit</button>
+    </form>
 
-    <h2>Other</h2>
 </body>
 </html>

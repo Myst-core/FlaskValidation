@@ -1,0 +1,7 @@
+.flashes {
+    list-style-type: none;
+}
+
+.error {
+    border: 3px solid red;
+}
