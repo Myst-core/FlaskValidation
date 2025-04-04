@@ -58,6 +58,8 @@ def index_post():
     if len(phone) != 0 and phone[0] != '0':
         flash('Phone number must start with a \'0\'', 'error')
     
+    # need to check for @ < > ' ' " " # ,
+    
     return render_template('index.html')
 
 if __name__ == '__main__':
